@@ -44,7 +44,7 @@ function getDaysUntil(dateStr: string | null): number | null {
 function formatDeadline(dateStr: string | null): { text: string; urgent: boolean; past: boolean } {
   const days = getDaysUntil(dateStr);
   if (days === null) return { text: 'Rolling basis', urgent: false, past: false };
-  if (days < 0) return { text: 'Deadline passed', urgent: false, past: true };
+  if (days < 0) return { text: new Date(dateStr!).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }), urgent: false, past: true };
   if (days === 0) return { text: 'Due today!', urgent: true, past: false };
   if (days === 1) return { text: 'Due tomorrow', urgent: true, past: false };
   if (days <= 7) return { text: `${days} days left`, urgent: true, past: false };
