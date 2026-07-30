@@ -265,7 +265,7 @@ export default function App() {
               { icon: Award, value: opportunities.length, label: 'Opportunities', isNumber: true },
               { icon: GraduationCap, value: opportunities.filter(o => o.category === 'scholarship').length, label: 'Scholarships', isNumber: true },
               { icon: DollarSign, value: '$3M+', label: 'In Prizes', isNumber: false },
-              { icon: Users, value: '50K+', label: 'Students Helped', isNumber: false },
+              { icon: Users, value: '50K+', label: 'Resource Views', isNumber: false },
             ].map((stat, i) => (
               <div
                 key={i}
